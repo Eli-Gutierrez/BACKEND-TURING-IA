@@ -4,6 +4,8 @@ import cors from "cors";
 
 // Rutas
 import usuarioRoutes from "./routes/usuarioRoutes.js";
+import productoRoutes from "./routes/productoRoutes.js";
+
 
 const app = express();
 const PORT = process.env.PORT || 3000;
@@ -19,6 +21,7 @@ app.get("/", (req, res) => {
 
 // Registrar rutas
 app.use("/api/usuarios", usuarioRoutes);
+app.use("/api/productos", productoRoutes); // ⬅ SE AGREGA
 
 app.listen(PORT, () => {
   console.log(`Servidor corriendo en http://localhost:${PORT}`);
